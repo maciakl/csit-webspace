@@ -1,0 +1,122 @@
+
+  <%= erb :logout_button %>
+
+  <script>
+    $(document).ready(function() {
+        $("input:text").focus(function() { $(this).select(); } );
+    });
+  </script>
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+        <h2>Lab 8</h2>
+
+        <div class="form-group">
+          <label for="lab8url">Website URL:</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="glyphicon glyphicon-link"></i> url</div>
+            <input type="text" id="lab8url" class="form-control" value="<%= @link %>/lab8/">
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">File List</div>
+          <div class="panel-body">
+
+            <table class="table">
+              <% @lab8.each do |file| %>
+
+              <tr>
+                <td> <%= File.basename(file) %> </td>
+                <td> <%= File.mtime(file).strftime("added on %m/%d/%y %l:%M %P") %> </td>
+                <td> <a href="/delete/lab8/<%= File.basename(file) %>" class="btn btn-danger btn-xs">
+                  <i class="glyphicon glyphicon-trash"></i> delete</a></td>
+              </tr>
+
+            <% end %>
+            </table>
+            <a href="/upload/lab8" class="btn btn-primary"><i class="glyphicon glyphicon-upload"></i> Add New File</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-3"></div>
+  </div>
+
+
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+        <h2>Lab 9</h2>
+
+        
+        <div class="form-group">
+          <label for="lab9url">Website URL:</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="glyphicon glyphicon-link"></i> url</div>
+            <input type="text" id="lab9url" class="form-control" value="<%= @link %>/lab9/">
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">File List</div>
+          <div class="panel-body">
+
+            <table class="table">
+              <% @lab9.each do |file| %>
+
+              <tr>
+                <td> <%= File.basename(file) %> </td>
+                <td> <%= File.mtime(file).strftime("added on %m/%d/%y %l:%M %P") %> </td>
+                <td> <a href="/delete/lab9/<%= File.basename(file) %>" class="btn btn-danger btn-xs">
+                  <i class="glyphicon glyphicon-trash"></i> delete</a></td>
+              </tr>
+
+            <% end %>
+            </table>
+            <a href="/upload/lab9" class="btn btn-primary"><i class="glyphicon glyphicon-upload"></i> Add New File</a>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="col-md-3"></div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+        <h2>Project</h2>
+
+
+        <div class="form-group">
+          <label for="projecturl">Website URL:</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="glyphicon glyphicon-link"></i> url</div>
+            <input type="text" id="projecturl" class="form-control" value="<%= @link %>/project/">
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">File List</div>
+          <div class="panel-body">
+
+            <table class="table">
+              <% @project.each do |file| %>
+
+              <tr>
+                <td> <%= File.basename(file) %> </td>
+                <td> <%= File.mtime(file).strftime("added on %m/%d/%y %l:%M %P") %> </td>
+                <td> <a href="/delete/project/<%= File.basename(file) %>" class="btn btn-danger btn-xs">
+                  <i class="glyphicon glyphicon-trash"></i> delete</a></td>
+              </tr>
+
+            <% end %>
+            </table>
+            <a href="/upload/project" class="btn btn-primary"><i class="glyphicon glyphicon-upload"></i> Add New File</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-3"></div>
+  </div>

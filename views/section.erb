@@ -1,0 +1,64 @@
+
+  <%= erb :logout_button %>
+  
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+        <h2>Section <%= @section %></h2>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">Student List for <%= @section %></div>
+          <div class="panel-body">
+
+            <table class="table">
+
+              <tr>
+                <th></th>
+                <th>Lab 8</th>
+                <th>Lab 9</th>
+                <th>Project</th>
+                <th></th>
+              </tr>
+
+              <% @students.each do |student| %>
+
+              <tr>
+                <td>
+                  <i class="glyphicon glyphicon-user"></i>
+                  <%= student.netid %> 
+                </td>
+
+                <td>
+                  <i class="glyphicon glyphicon-file"></i>
+                  <%= Dir[File.join(@dir, student.netid, 'lab8', '*')].length %>
+                </td>
+                <td>
+                  <i class="glyphicon glyphicon-file"></i>
+                  <%= Dir[File.join(@dir, student.netid, 'lab9', '*')].length %>
+                </td>
+                <td>
+                  <i class="glyphicon glyphicon-file"></i>
+                  <%= Dir[File.join(@dir, student.netid, 'project', '*')].length %>
+                </td>
+                <td>
+                  <a href="/admin/student/view/<%= student.netid %>" class="btn btn-info btn-xs">
+                    <i class="glyphicon glyphicon-folder-open"></i> &nbsp; show</a>
+
+                    <a href="/admin/student/reset/<%= student.netid %>" class="btn btn-warning btn-xs">
+                      <i class="glyphicon glyphicon-lock"></i> reset pw</a>
+
+                    <a href="/admin/student/delete/<%= student.netid %>" class="btn btn-danger btn-xs">
+                      <i class="glyphicon glyphicon-trash"></i> delete</a>
+                </td>
+              </tr>
+
+            <% end %>
+            </table>
+
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-3"></div>
+  </div>
+

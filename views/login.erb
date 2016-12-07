@@ -1,0 +1,35 @@
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+
+				<h2>Log In</h2>
+
+				<form method="POST">
+					<div class="form-group">
+						<label for="netid">Your MSU NetID Username</label>
+            <input type="text" class="form-control" id="netid" name='netid'
+              placeholder="enter your netid here" pattern="[A-Za-z0-9]+" required >
+					</div>
+
+					<div cass="form-group">
+						<label for="password">Choose a new password</label>
+						<input type="password" class="form-control" id="password" name="password"
+              placeholder="your password" required >
+					</div>
+
+          <div class="form-group"></div>
+
+					<div class="form-group">
+            <%= recaptcha_tags %>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+          <span class="pull-right"><a href="/register" class="btn btn-default">Sign Up</a></span>
+
+				</form>
+
+
+      </div>
+      <div class="col-md-3"></div>
+  </div>

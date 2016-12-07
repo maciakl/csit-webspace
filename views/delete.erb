@@ -1,0 +1,40 @@
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <div class="panel-title">
+              Please Confirm Deletion Request
+              <span class="pull-right"><i class="glyphicon glyphicon-exclamation-sign"></i></span>
+          </div>
+          </div>
+          <div class="panel-body">
+
+            <p>You are about to delete <%= @what %> <strong class="text-danger"><%= @name %></strong>.</p>
+
+            <p>This will delete all files associated with this <%= @what %>.<br>
+            <u>This operation is irreversible.</u>
+            Do not use this feature while class is still in session.</p>
+
+            <form method="POST" action="/admin/<%= @what %>/delete">
+              <div class="form-group">
+                <label for="confirmation">Type in the word <samp class="text-info">DELETE</samp> below</label>
+                <input type="text" class="form-control" id="confirmation" name="confirmation"
+                  placeholder="confirm your intent by typing in the word DELETE" pattern="DELETE" required>
+              </div>
+
+              <input type="hidden" name="object" value="<%= @name %>">
+
+              <button type="submit" class="btn btn-danger">Delete</button>
+              <button class="btn btn-default" onclick="window.history.back();">Cancel</button>
+
+           </form>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3"></div>
+  </div>

@@ -1,0 +1,40 @@
+
+  <%= erb :logout_button %>
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+        <h2>Administrator Panel</h2>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">Section List</div>
+          <div class="panel-body">
+
+            <table class="table">
+              <% @sections.each do |section| %>
+
+              <tr>
+                <td> <%= section.name %> </td>
+                <td>
+                  <i class="glyphicon glyphicon-user"></i>
+                  <%= Student.count(:section_name => section.name) %>
+                </td>
+                <td>
+                  <a href="admin/section/view/<%= section.name %>" class="btn btn-info btn-xs">
+                    <i class="glyphicon glyphicon-info-sign"></i>  inspect</a>
+                    <a href="admin/section/delete/<%= section.name %>" class="btn btn-danger btn-xs">
+                      <i class="glyphicon glyphicon-trash"></i> delete</a>
+                </td>
+              </tr>
+
+            <% end %>
+            </table>
+
+            <a href="/admin/section/new" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> New Section</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-3"></div>
+  </div>
+

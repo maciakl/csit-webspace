@@ -1,0 +1,45 @@
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+
+				<h2>Sign Up for New Account</h2>
+
+				<form method="POST">
+					<div class="form-group">
+						<label for="netid">Your MSU NetID Username</label>
+            <input type="text" class="form-control" id="netid" name='netid'
+              placeholder="your netid username, no spaces, no symbols" pattern="[A-Za-z0-9]+" required>
+					</div>
+
+					<div cass="form-group">
+						<label for="password">Choose a new password</label>
+						<input type="password" class="form-control" id="password" name="password"
+              placeholder="new password, 8 or more characrers, do not use your netid password" pattern=".{8,}" required>
+					</div>
+
+					<div class="form-group">
+						<label for="password2">Retype your password</label>
+						<input type="password" class="form-control" id="password2" name="password2"
+							placeholder="re-type your password here" pattern=".{8,}" required>
+					</div>
+
+					<div class="form-group">
+						<label for="section_name">CSIT Section Code</label>
+            <input type="text" class="form-control" id="section_name" name="section_name"
+              placeholder="obtain code from instructor, all uppercase, no spaces" pattern="[A-Z0-9-]+" required>
+					</div>
+
+					<div class="form-group">
+            <%= recaptcha_tags %>
+					</div>
+
+					<button type="submit" class="btn btn-default">Submit</button>
+
+
+				</form>
+
+
+      </div>
+      <div class="col-md-3"></div>
+  </div>

@@ -1,0 +1,25 @@
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+
+				<h2>Upload File</h2>
+
+				<form method="POST" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label for="inputfile">Add file to the <%= @project %> folder</label>
+            <input type="file" id="inputfile" name="inputfile">
+            <p class="help-block">file size limit is 5 MB</p>
+          </div>
+
+					<button type="submit" class="btn btn-primary">Upload</button>
+					<a href="/me" class="btn btn-default">Cancel</a>
+
+
+				</form>
+
+
+      </div>
+      <div class="col-md-3"></div>
+  </div>

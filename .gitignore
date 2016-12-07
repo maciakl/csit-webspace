@@ -1,0 +1,7 @@
+.bundle
+demo.db
+config.yaml
+
+!public/student/
+public/student/*
+!public/student/.gitignore

@@ -1,0 +1,32 @@
+
+  <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-7">
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title">
+              Create New Section
+              <span class="pull-right"><i class="glyphicon glyphicon-plus-sign"></i></span>
+          </div>
+          </div>
+          <div class="panel-body">
+
+            <form method="POST">
+              <div class="form-group">
+                <label for="section_name">Enter New Section Name</label>
+                <input type="text" class="form-control" id="section_name" name="section_name"
+                  placeholder="all uppercase, no spaces" pattern="[A-Z0-9-]+" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="/admin" class="btn btn-default">Cancel</a>
+
+           </form>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3"></div>
+  </div>

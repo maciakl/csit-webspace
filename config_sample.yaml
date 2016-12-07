@@ -1,0 +1,20 @@
+# Site URL
+# The base url of your website (eg. https://foo.bar)
+# Enter without the trailing slash
+# url: http://csit.website
+url: http://127.0.0.1:4567
+
+# Database URL 
+# Set to false to use demo.db SQLite database for testing
+# Real Database: postgres://user:password@hostname/database
+database_url: false
+
+# Set password for the admin user
+admin_password: verylongpassword
+
+# Default section name. This section will be used for the admin user. All Uppercase! No spaces!
+default_section: DEFAULT
+
+# Re-Captcha Keys used for the CAPTCHA on the registration form and upload forms.
+site_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+secret_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

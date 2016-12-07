@@ -1,0 +1,58 @@
+
+  <%= erb :logout_button %>
+
+
+  <script>
+    $(document).ready(function() {
+        $("input:text").focus(function() { $(this).select(); } );
+    });
+  </script>
+
+  <% @project.each do |project| %>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7">
+          <h2><%= project.name %></h2>
+
+          <div class="form-group">
+            <label for="<%= project.stub %>url">Website URL:</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="glyphicon glyphicon-link"></i> url</div>
+              <input type="text" id="<%= project.stub %>url" class="form-control" value="<%= @link %>/<%= project.stub %>/">
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">File List</div>
+            <div class="panel-body">
+
+              <table class="table">
+                <% project.files.each do |file| %>
+
+                <tr>
+                  <td> <%= File.basename(file) %> </td>
+                  <td> <%= File.mtime(file).strftime("added on %m/%d/%y %l:%M %P") %> </td>
+                  <td> 
+                      
+                      <a href="<%= @link %>/<%= project.stub %>/<%= File.basename(file) %>" class="btn btn-info btn-xs" target="_blank">
+                        <i class="glyphicon glyphicon-link"></i> link</a>
+
+                      <a href="/delete/<%= project.stub %>/<%= File.basename(file) %>" class="btn btn-danger btn-xs">
+                        <i class="glyphicon glyphicon-trash"></i> delete</a>
+                  </td>
+                </tr>
+
+              <% end %>
+              </table>
+                <% if not @admin %>
+                  <a href="/upload/<%= project.stub %>" class="btn btn-primary"><i class="glyphicon glyphicon-upload"></i> Add New File</a>
+                <% end %>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+  <% end %>
+
