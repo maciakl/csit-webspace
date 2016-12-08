@@ -1,7 +1,9 @@
 .bundle
 .git
 .gitignore
-Makefile
-demo.db
+*.db
+config_sample.yaml
 exclude.rsync
+setup.sql
 public/student
+Makefile

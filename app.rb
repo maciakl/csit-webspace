@@ -45,7 +45,7 @@ PUBLICDIR = File.join(Dir.pwd, 'public', 'student')
 configure do
 
   # DBURL is defined in the config.yaml file
-  DataMapper.setup(:default, settings.database_url || "sqlite3://#{Dir.pwd}/demo.db")
+  DataMapper.setup(:default, settings.database_url || "sqlite3://#{Dir.pwd}/csit.db")
 
   DataMapper.auto_upgrade!
 

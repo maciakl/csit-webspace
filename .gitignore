@@ -1,5 +1,6 @@
 .bundle
-demo.db
+*.db
+*.sql
 config.yaml
 
 !public/student/
