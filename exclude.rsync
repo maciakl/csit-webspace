@@ -1,0 +1,7 @@
+.bundle
+.git
+.gitignore
+Makefile
+demo.db
+exclude.rsync
+public/student
